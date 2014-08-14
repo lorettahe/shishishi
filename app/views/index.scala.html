@@ -6,11 +6,13 @@
             <h1>食诗史</h1>
             <p class="lead">唐诗，宋词，元曲。食诗史，十世仕。现共收录 @message 首诗</p>
         </div>
-        <h2>每日一诗</h2>
-        <h3>@randomtitle</h3>
-        <h4>@randomauthor</h4>
-        @for(line <- randomcontent) {
-            <p>@line</p>
-        }
+        <div align="center">
+            <h2>每日一诗</h2>
+            <h3>@randomtitle</h3>
+            <h4>@randomauthor</h4>
+            @for(line <- randomcontent) {
+                <p>@line</p>
+            }
+        </div>
     </div>
 }
