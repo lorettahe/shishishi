@@ -1,4 +1,4 @@
-@(message: String)(randomtitle: String)(randomauthor: String)(randomcontent: String)
+@(message: String)(randomtitle: String)(randomauthor: String)(randomcontent: List[String])
 
 @main("食诗史"){
     <div class="container">
@@ -9,6 +9,8 @@
         <h2>每日一诗</h2>
         <h3>@randomtitle</h3>
         <h4>@randomauthor</h4>
-        <p>@randomcontent</p>
+        @for(line <- randomcontent) {
+            <p>@line</p>
+        }
     </div>
 }
