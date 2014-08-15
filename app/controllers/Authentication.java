@@ -22,17 +22,17 @@ import views.html.*;
 public class Authentication {
 
     public static Result login() {
-        return ok(login.render(form(User.class)));
+        return ok(login.render(form(Users.class)));
     }
 
     public static Result authenticate() {
-        Form<User> loginForm = form(User.class).bindFromRequest();
-        User user = Ebean.find(User.class)
+        Form<Users> loginForm = form(Users.class).bindFromRequest();
+        Users user = Ebean.find(Users.class)
                 .where().eq("email", loginForm.get().email)
                 .eq("password", loginForm.get().password)
                 .findUnique();
         if (user == null) {
-            return badRequest(login.render(form(User.class)));
+            return badRequest(login.render(form(Users.class)));
         } else {
             session().clear();
             session("email", loginForm.get().email);
@@ -41,15 +41,15 @@ public class Authentication {
     }
 
     public static Result register() {
-        return ok(register.render(form(User.class)));
+        return ok(register.render(form(Users.class)));
     }
 
     public static Result addUser() {
-        Form<User> registerForm = form(User.class).bindFromRequest();
-        User existingUser = Ebean.find(User.class)
+        Form<Users> registerForm = form(Users.class).bindFromRequest();
+        Users existingUser = Ebean.find(Users.class)
                 .where().eq("email", registerForm.get().email).findUnique();
         if (existingUser != null) {
-            return badRequest(register.render(form(User.class)));
+            return badRequest(register.render(form(Users.class)));
         } else {
             Ebean.save(registerForm.get());
             return redirect(routes.Authentication.login());
@@ -57,7 +57,7 @@ public class Authentication {
     }
 
     @Entity
-    public static class User {
+    public static class Users {
         @Id
         public Long id;
 
