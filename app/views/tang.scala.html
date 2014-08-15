@@ -7,9 +7,9 @@
         </div>
         <div class="row">
             @for(poem <- poems) {
-                <div class="col-lg-3 col-sm-6">
-                    <h4>@poem.title</h3>
-                    <h5>@poem.author</h4>
+                <div class="col-lg-4 col-sm-6">
+                    <h4><a>@poem.title</a></h4>
+                    <h5>@poem.author</h5>
                 </div>
             }
         </div>
