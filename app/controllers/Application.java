@@ -26,7 +26,7 @@ public class Application extends Controller {
         return ok(tang.render(poems));
     }
 
-    public static Result poem(Long id) {
+    public static Result poem(String author, String title, Long id) {
         Poem poem = Poem.find.byId(id);
         return ok(readpoem.render(poem));
     }
