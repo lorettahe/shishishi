@@ -2,22 +2,25 @@
 
 @main("食诗史：登陆"){
     <div class="container" align="center">
-
-    @helper.form(routes.Authentication.addUser) {
-        <fieldset>
-            <legend>注册</legend>
-            <div class="form-group">
-                <label for="email">Email：</label>
-                <input type="email" class="form-control" name="email" placeholder="Email">
+        <div class="row">
+            <div class="col-lg-6">
+            @helper.form(action = routes.Authentication.addUser(), 'class -> "form-horizontal") {
+                <fieldset>
+                    <legend>注册</legend>
+                    <div class="form-group">
+                        <label for="email">Email：</label>
+                        <input type="email" class="form-control" name="email" placeholder="Email">
+                    </div>
+                    <div class="form-group">
+                        <label for="password">密码：</label>
+                        <input type="password" name="password" class="form-control" placeholder="Password">
+                    </div>
+                    <div>
+                        <button type="submit" class="btn btn-primary">注册</button>
+                    </div>
+                </fieldset>
+            }
             </div>
-            <div class="form-group">
-                <label for="password">密码：</label>
-                <input type="password" name="password" class="form-control" placeholder="Password">
-            </div>
-            <div>
-                <button type="submit" class="btn btn-primary">注册</button>
-            </div>
-        </fieldset>
-    }
+        </div>
     </div>
 }
