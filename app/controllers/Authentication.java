@@ -41,6 +41,10 @@ public class Authentication {
     }
 
     public static Result register() {
+        return ok(register.render(form(User.class)));
+    }
+
+    public static Result addUser() {
         Form<User> registerForm = form(User.class).bindFromRequest();
         User existingUser = Ebean.find(User.class)
                 .where().eq("email", registerForm.get().email).findUnique();

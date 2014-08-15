@@ -1,7 +1,7 @@
 @(form: Form[Authentication.User])
 
 @main("食诗史：登陆"){
-    @helper.form(routes.Authentication.register) {
+    @helper.form(routes.Authentication.addUser) {
         @helper.inputText(form("email"))
         @helper.inputPassword(form("password"))
     }
