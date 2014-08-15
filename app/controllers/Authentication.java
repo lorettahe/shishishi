@@ -3,6 +3,7 @@ package controllers;
 import com.avaje.ebean.Ebean;
 import play.data.Form;
 import play.data.validation.Constraints;
+import play.db.ebean.Model;
 import play.mvc.Result;
 
 import javax.persistence.Entity;
@@ -57,7 +58,7 @@ public class Authentication {
     }
 
     @Entity
-    public static class Users {
+    public static class Users extends Model{
         @Id
         public Long id;
 
