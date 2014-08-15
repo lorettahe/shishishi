@@ -26,8 +26,8 @@ public class Application extends Controller {
         return ok(tang.render(poems));
     }
 
-    public static Result poem(String author, String title) {
-        Poem poem = Poem.find.where().eq("author", author).eq("title", title).findUnique();
+    public static Result poem(Long id) {
+        Poem poem = Poem.find.byId(id);
         return ok(readpoem.render(poem));
     }
 
