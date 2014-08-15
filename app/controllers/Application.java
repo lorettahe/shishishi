@@ -21,4 +21,9 @@ public class Application extends Controller {
                 randomPoem.title, randomPoem.author, contentLines));
     }
 
+    public static Result readTang() {
+        List<Poem> poems = Poem.find.where().eq("dynasty", "tang").findList();
+        return ok(tang.render(poems));
+    }
+
 }

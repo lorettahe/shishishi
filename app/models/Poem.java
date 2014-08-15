@@ -6,9 +6,6 @@ import play.db.ebean.Model;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
-/**
- * Created by loretta on 14/08/14.
- */
 @Entity
 public class Poem extends Model {
 
@@ -23,6 +20,9 @@ public class Poem extends Model {
 
     @Constraints.Required
     public String content;
+
+    @Constraints.Required
+    public String dynasty;
 
     public static Finder<Long, Poem> find = new Finder<Long, Poem>(
             Long.class, Poem.class

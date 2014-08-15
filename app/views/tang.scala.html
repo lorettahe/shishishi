@@ -1,0 +1,17 @@
+@(poems : List[Poem])
+
+@main("食诗史"){
+    <div class="container">
+        <div class="jumbotron" align="center">
+            唐诗
+        </div>
+        <div class="row">
+            @for(poem <- poems) {
+                <div class="col-lg-3 col-sm-6">
+                    <h3>@poem.content</h3>
+                    <h4>@poem.author</h4>
+                </div>
+            }
+        </div>
+    </div>
+}
