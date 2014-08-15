@@ -8,7 +8,7 @@
         <div class="row">
             @for(poem <- poems) {
                 <div class="col-lg-4 col-sm-6">
-                    <h4><a>@poem.title</a></h4>
+                    <h4><a href="/poem/@poem.author/@poem.title">@poem.title</a></h4>
                     <h5>@poem.author</h5>
                 </div>
             }
