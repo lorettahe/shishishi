@@ -15,6 +15,8 @@ import static play.mvc.Results.badRequest;
 import static play.mvc.Results.ok;
 import static play.mvc.Results.redirect;
 
+import models.Users;
+
 import views.html.*;
 
 /**
@@ -57,16 +59,5 @@ public class Authentication {
         }
     }
 
-    @Entity
-    public static class Users extends Model{
-        @Id
-        public Long id;
 
-        @Constraints.Required
-        @Constraints.Email
-        public String email;
-
-        @Constraints.Required
-        public String password;
-    }
 }
