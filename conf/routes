@@ -3,11 +3,15 @@
 # ~~~~
 
 # Home page
-GET        /                    controllers.Application.index()
+GET        /                               controllers.Application.index()
 
-GET        /tang                controllers.Application.readTang()
+GET        /tang                           controllers.Application.readTang()
 
-GET        /poem/:author/:title/:id controllers.Application.poem(author:String, title: String, id: Long)
+GET        /poem/:author/:title/:id        controllers.Application.poem(author:String, title: String, id: Long)
+
+GET        /login                          controllers.Authentication.login()
+
+POST       /authenticate                   controllers.Authentication.authenticate()
 
 # Map static resources from the /public folder to the /assets URL path
-GET        /assets/*file        controllers.Assets.at(path="/public", file)
+GET        /assets/*file                   controllers.Assets.at(path="/public", file)
