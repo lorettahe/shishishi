@@ -52,7 +52,7 @@ public class Authentication {
             return badRequest(register.render(form(User.class)));
         } else {
             Ebean.save(registerForm.get());
-            return redirect(login.render(form(User.class)));
+            return redirect(routes.Authentication.login());
         }
     }
 
