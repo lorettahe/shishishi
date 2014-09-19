@@ -16,7 +16,7 @@
                 <li><a href="#">元曲</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                @if(@session.get("email") == null) {
+                @if(session.get("email") == null) {
                     <li><a href="/login">登陆</a></li>
                     <li><a href="/register">注册</a></li>
                 } else {
